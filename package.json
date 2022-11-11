@@ -1,0 +1,26 @@
+{
+  "name": "add-produts-in-cart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon --ignore products.json --ignore sales.json index.js",
+    "start": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasSilvaSouzaD/add-produts-in-cart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasSilvaSouzaD/add-produts-in-cart/issues"
+  },
+  "homepage": "https://github.com/LucasSilvaSouzaD/add-produts-in-cart#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2"
+  }
+}
