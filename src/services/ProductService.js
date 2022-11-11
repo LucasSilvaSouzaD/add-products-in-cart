@@ -7,7 +7,7 @@ class ProductService {
 
     static findOne(id) {
         const product = productsBase.find(item => item.id == id)
-        console.log(product)
+
         return product
     }
     
