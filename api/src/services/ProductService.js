@@ -6,11 +6,24 @@ class ProductService {
     }
 
     static findOne(id) {
-        const product = productsBase.find(item => item.id == id)
+        const product = productsBase.find(product => product.id == id)
 
         return product
     }
     
+    static verifyStock(id, quantity) {
+        const product = productsBase.find(product => product.id == id)
+
+        const hasStock = product.inStock >= quantity
+
+        const response = {
+            id,
+            hasStock,
+        }
+        
+        return response
+
+    }
 }
 
 

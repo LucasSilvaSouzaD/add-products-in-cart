@@ -1,10 +1,10 @@
 
 class CartController {
-    static getAllProducts() {
-
+    static addCart(id) {
+        
     }
 
-    static addProductInCart (id) {
+    static removeCart (id) {
         
     }
 }

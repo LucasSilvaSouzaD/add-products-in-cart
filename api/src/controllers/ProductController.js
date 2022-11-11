@@ -14,6 +14,14 @@ class ProductController {
 
     res.send(product)
   }
+
+  static async getProductStock(req, res) {
+    const { id, quantity } = req.body
+
+    const response = await ProductService.verifyStock(id, quantity)
+
+    res.send(response)
+  }
 }
 
 module.exports = ProductController;
