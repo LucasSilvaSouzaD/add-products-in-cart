@@ -4,7 +4,7 @@
         "name": "Piada Merda",
         "price": 10.25,
         "inStock": 10,
-        "minimumCartQuantity": 5,
+        "maxCartQuantity": 5,
         "imgBase64": ""
     },
     {
@@ -12,7 +12,7 @@
         "name": "A Volta dos que não foram",
         "inStock": 10,
         "price": 10.25,
-        "minimumCartQuantity": 5,
+        "maxCartQuantity": 5,
         "imgBase64": ""
     },
     {
@@ -20,7 +20,7 @@
         "name": "Febre DU rato",
         "price": 10.25,
         "inStock": 10,
-        "minimumCartQuantity": 5,
+        "maxCartQuantity": 5,
         "imgBase64": ""
     }
 ]
