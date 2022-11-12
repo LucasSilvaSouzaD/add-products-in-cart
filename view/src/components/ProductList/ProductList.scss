@@ -1,3 +1,7 @@
 .product-list-container {
-  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  padding: 50px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-gap: 50px 25px;
+  justify-items: center;
 }

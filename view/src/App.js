@@ -9,10 +9,7 @@ function App() {
 		<div className="App">
 			<QntdItemsCart>
 				<Header />
-
-				<div className="products-list" style={{ padding: "50px 30px" }}>
-					<ProductList />
-				</div>
+        <ProductList />
 			</QntdItemsCart>
 		</div>
 	);
