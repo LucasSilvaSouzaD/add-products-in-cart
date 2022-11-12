@@ -26,7 +26,7 @@ const ProductCard = () => {
 
 	function convertPrice(price) {
 		var value = price.toString();
-		return value.replace(".", ",");
+		return "R$ " + value.replace(".", ",");
 	}
 
 	function handleClick() {
@@ -82,7 +82,7 @@ const ProductCard = () => {
 							{/* <span className="measure">terá medida no produto?</span> */}
 						</div>
 						<div className="product-price">
-							<span className="price">R$ {convertPrice(price)}</span>
+							<span className="price">{convertPrice(price)}</span>
 						</div>
 					</div>
 					<div className="quantity-container">
