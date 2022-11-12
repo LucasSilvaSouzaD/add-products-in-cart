@@ -1,7 +1,7 @@
 import React from "react";
 import CartLogo from "../../assets/img/cart.svg";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import "./style.scss";
+import "./Cart.scss";
 
 const Cart = () => {
 	const data = React.useContext(GlobalContext);
