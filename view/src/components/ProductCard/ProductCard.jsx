@@ -1,14 +1,21 @@
 import ProductImg from "../../assets/img/ouro.jpg";
 import "./ProductCard.scss";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import React from "react";
+import { useState, useContext } from "react";
 
 const ProductCard = () => {
-	const [dados, setDados] = React.useState();
+	const [dados, setDados] = useState();
 
-	const [qntdProduct, setQntdProduct] = React.useState(0);
+	const [qntdProduct, setQntdProduct] = useState(0);
 
-	const data = React.useContext(GlobalContext);
+	const data = useContext(GlobalContext);
+
+  const getProducts = async () => {
+    const getProducts = await fetch('http://localhost:3030/products').then(data => data.json())
+    setDados(getProducts)
+  }
+
+  getProducts()
 
 	// async function handleClick() {
 	// 	await fetch("http://localhost:3030/products", {
@@ -37,40 +44,12 @@ const ProductCard = () => {
 		});
 	}
 
-	const response = [
-		{
-			id: 5000,
-			name: "Piada Merda",
-			price: 10.25,
-			inStock: 10,
-			maxCartQuantity: 5,
-			imgBase64: "",
-		},
-		{
-			id: 53412,
-			name: "A Volta dos que não foram",
-			inStock: 10,
-			price: 10.25,
-			maxCartQuantity: 5,
-			imgBase64: "",
-		},
-		{
-			id: 31532,
-			name: "Febre DU rato",
-			price: 10.25,
-			inStock: 10,
-			maxCartQuantity: 5,
-			imgBase64: "",
-		},
-	];
-
-	//setDados(response);
-
-	if (!response) return null;
+	if (!dados) return null;
 
 	return (
 		<div className="container-cards">
-			{response.map(({ id, name, price, imgBase64 }) => (
+      
+			{dados.map(({ id, name, price, imgBase64 }) => (
 				<div className="card-container" key={id}>
 					<div className="image-container">
 						<img src={ProductImg} alt="" />
