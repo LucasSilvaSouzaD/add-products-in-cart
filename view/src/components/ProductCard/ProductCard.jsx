@@ -3,8 +3,8 @@ import './ProductCard.scss'
 
 const ProductCard = () => {
 
-  const getProducts = () => {
-    const teste = fetch('localhost:3030/products').then(data => data.json())
+  const getProducts = async () => {
+    const teste = await fetch('http://localhost:3030/products').then(data => data.json())
     console.log('teste ==>', teste)
   }
 
