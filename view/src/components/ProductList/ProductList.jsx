@@ -1,15 +1,27 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import ProductCard from '../ProductCard/ProductCard'
+import { GlobalContext } from '../../contexts/GlobalContext'
 import './ProductList.scss'
 
 const ProductList = () => {
   const [dados, setDados] = useState('')
+  const {setCartProducts, data} = useContext(GlobalContext)
+
+  function handleFormatProducts(productsResponse) {
+    setDados(productsResponse)
+    // const mainObj = {}
+
+    // productsResponse.forEach(product => {
+    //   mainObj[product.name] = {name: product.name, quantity: 0, isActive: false, id: product.id}
+    // });
+    // setCartProducts(mainObj)
+  }
 
   useEffect(() => {
     try {
       fetch('http://localhost:3030/products')
       .then((response) => response.json())
-      .then((data) => setDados(data))
+      .then((data) => handleFormatProducts(data))
     } catch(e) {
       console.error('request error', e)
     }

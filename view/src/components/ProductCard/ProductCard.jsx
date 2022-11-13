@@ -7,31 +7,14 @@ const ProductCard = ({ id, name, price, imgBase64 }) => {
   const [qntdProduct, setQntdProduct] = useState(0)
   const data = useContext(GlobalContext)
 
-  // async function handleClick() {
-  // 	await fetch("http://localhost:3030/products", {
-  // 		mode: "cors",
-  // 		headers: {
-  // 			"Content-Type": "application/json",
-  // 		},
-  // 	})
-  // 		.then((response) => response.json())
-  // 		.then((json) => setDados(json))
-  // 		.then(console.log("dados  --> ", dados));
-  // }
-
-  //handleClick();
-
   function convertPrice(price) {
     var value = price.toString()
     return 'R$ ' + value.replace('.', ',')
   }
 
   function handleClick() {
-    data.addItem(qntdProduct)
+    data.addItem(name, qntdProduct)
     setQntdProduct(0)
-    document.querySelectorAll('[id=product-quantity]').forEach((e) => {
-      e.value = ''
-    })
   }
 
   return (
@@ -53,11 +36,10 @@ const ProductCard = ({ id, name, price, imgBase64 }) => {
         <input
           type="number"
           name="product-quantity"
-          id={`product-quantity`}
           onChange={(event) => {
-            setQntdProduct(Number(event.target.value))
+            event.target.value < 0 ? setQntdProduct(0) : setQntdProduct(Number(event.target.value))
           }}
-          valeu={qntdProduct}
+          value={qntdProduct}
         />
       </div>
       <div className="button-container">

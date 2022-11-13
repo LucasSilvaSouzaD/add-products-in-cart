@@ -1,10 +1,17 @@
 import React from "react";
+import { useEffect } from "react";
 import CartLogo from "../../assets/img/cart.svg";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import "./Cart.scss";
 
 const Cart = () => {
 	const data = React.useContext(GlobalContext);
+
+  useEffect(() => {
+    const productsState = data.cartProducts;
+
+    console.log('activedProducts')
+  }, [data.cartProducts])
 
 	return (
 		<div>
