@@ -1,8 +1,119 @@
 @import "../../sass/base";
 
+.cart-container {
+  position: relative;
+
+  .icon-container {
+    cursor: pointer;
+  }
+
+  .mini-cart-container {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: -180px;
+    width: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: opacity 700ms ease, width 700ms ease;
+
+    &.open {
+      opacity: 1;
+      right: 0;
+      width: 350px;
+    }
+  }
+}
+
+.cart-container .mini-cart-container {
+  padding: 15px 25px;
+
+  .top-container {
+    @include flexboxContainer($justify: space-between);
+    margin-bottom: 15px;
+  }
+
+  .top-container h2 {
+    margin: 0;
+  }
+
+  .top-container .icon-close {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+  }
+
+  .top-container .icon-close img {
+    width: 100%;
+    height: 100%;
+  }
+
+  
+}
+
+.cart-container .products-cart-list {
+  @include flexboxContainer($direction: column);
+  gap: 15px 0;
+
+  .item-container {
+    width: 100%;
+    @include flexboxContainer($justify: flex-start);
+    gap: 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+  }
+
+  .item-container .img-container,
+  .item-container .img-container img {
+    border-radius: 50%;
+  }
+
+  .item-container .img-container {
+    box-shadow: 3px 3px 3px rgb(126, 126, 126);
+  }
+
+  .item-container .text-container {
+    @include flexboxContainer($direction: column, $align: flex-start);
+    width: 100%;
+    position: relative;
+
+    .product-ref {
+      margin: 5px 0;
+    }
+  }
+
+  .item-container .text-container .delete-icon-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    
+    img {
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .total-cart-container {
+    width: 100%;
+    @include flexboxContainer($justify: space-between);
+
+    .text,
+    .total-price {
+      font-weight: 700;
+    }
+
+    .total-price {
+      color: #21a64f;
+    }
+  }
+}
+
 .logoIcon {
-	width: 100px !important;
-	height: 90px !important;
+	width: 100px;
+	height: 90px;
 	position: relative;
 }
 
