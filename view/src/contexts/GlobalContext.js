@@ -1,13 +1,23 @@
-import React from "react";
+import { useEffect } from "react";
+import {createContext, useState} from "react";
 
-export const GlobalContext = React.createContext();
+export const GlobalContext = createContext();
 
 export const QntdItemsCart = ({ children }) => {
-	const [qntdItems, setQntdItems] = React.useState(0);
+  const [cartProducts, setCartProducts] = useState([]);
+	const [qntdItems, setQntdItems] = useState(0);
 
-	function addItem(number) {
+	function addItem(name, number) {
 		setQntdItems(qntdItems + number);
+
+    setCartProducts(prevState => {
+      return [...prevState, name]
+    })
 	}
 
-	return <GlobalContext.Provider value={{ qntdItems, addItem }}>{children}</GlobalContext.Provider>;
+  useEffect(() => {
+    console.log('mudou cartProducts', cartProducts)
+  }, [cartProducts])
+
+	return <GlobalContext.Provider value={{ qntdItems, addItem, cartProducts, setCartProducts }}>{children}</GlobalContext.Provider>;
 };

@@ -1,75 +1,70 @@
 @import "../../sass/base";
 
-.container-cards {
-	display: flex;
-	justify-content: space-around;
+.card-container {
+  max-width: 270px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 7px;
+  padding-bottom: 20px;
+  box-shadow: 5px 5px 5px #bdbbbb;
 
-	.card-container {
-		max-width: 225px;
-		width: 100%;
-		background-color: #fff;
-		border-radius: 7px;
-		padding-bottom: 20px;
-		box-shadow: 5px 5px 5px #bdbbbb;
+  .image-container img {
+    width: 100%;
+    border-radius: 7px 7px 0 0;
+  }
 
-		.image-container img {
-			width: 100%;
-			border-radius: 7px 7px 0 0;
-		}
+  .text-container,
+  .quantity-container,
+  .button-container {
+    padding: 0 15px;
+  }
 
-		.text-container,
-		.quantity-container,
-		.button-container {
-			padding: 0 15px;
-		}
+  .text-container .product-ref {
+    @include flexboxContainer($direction: column, $align: flex-start);
+  }
 
-		.text-container .product-ref {
-			@include flexboxContainer($direction: column, $align: flex-start);
-		}
+  .text-container .product-ref .name {
+    font-size: 14px;
+    line-height: 16.41px;
+    font-weight: 700;
+  }
 
-		.text-container .product-ref .name {
-			font-size: 14px;
-			line-height: 16.41px;
-			font-weight: 700;
-		}
+  .text-container .product-ref .measure {
+    font-size: 12px;
+    color: #696969;
+    line-height: 12px;
+    margin-bottom: 10px;
+  }
 
-		.text-container .product-ref .measure {
-			font-size: 12px;
-			color: #696969;
-			line-height: 12px;
-			margin-bottom: 10px;
-		}
-
-		.text-container .product-price span {
-			color: #5bc666;
-			font-weight: 700;
-		}
-	}
+  .text-container .product-price span {
+    color: #5bc666;
+    font-weight: 700;
+  }
 }
 
 .card-container .quantity-container {
-	margin: 15px 0;
-	@include flexboxContainer;
+  margin: 15px 0;
+  @include flexboxContainer;
 
-	input {
-		border: 2px solid #3e6d9c;
-		width: 95px;
-		height: 40px;
-		border-radius: 5px;
-		text-align: center;
-	}
+  input {
+    border: 2px solid #3e6d9c;
+    width: 95px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+  }
 }
 
 .card-container .button-container button {
-	width: 100%;
-	border: none;
-	background-color: #21a64f;
-	color: #fff;
-	padding: 12px 0;
-	border-radius: 5px;
-	cursor: pointer;
+  width: 100%;
+  border: none;
+  background-color: #21a64f;
+  color: #fff;
+  padding: 12px 0;
+  border-radius: 5px;
+  cursor: pointer;
 
-	&:hover {
-		background-color: #177939;
-	}
+  &:hover {
+    background-color: #177939;
+  }
 }
