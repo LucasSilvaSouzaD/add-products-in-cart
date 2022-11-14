@@ -1,1 +1,46 @@
+<<<<<<< HEAD
 [{"id":5000,"name":"Piada Merda","price":10.25,"inStock":10,"maxCartQuantity":5,"imgBase64":""},{"id":53412,"name":"A Volta dos que não foram","inStock":10,"price":10.25,"maxCartQuantity":5,"imgBase64":""},{"id":31532,"name":"Febre DU rato","price":10.25,"inStock":10,"maxCartQuantity":5,"imgBase64":""},{}]
+=======
+[
+  {
+    "id": 5000,
+    "name": "Piada Merda",
+    "price": 10.25,
+    "inStock": 10,
+    "maxCartQuantity": 5,
+    "imgBase64": ""
+  },
+  {
+    "id": 53412,
+    "name": "A Volta dos que não foram",
+    "inStock": 10,
+    "price": 10.25,
+    "maxCartQuantity": 5,
+    "imgBase64": ""
+  },
+  {
+    "id": 31532,
+    "name": "Febre DU rato",
+    "price": 10.25,
+    "inStock": 10,
+    "maxCartQuantity": 5,
+    "imgBase64": ""
+  },
+  {
+    "id": 3,
+    "name": "Febre DU rato",
+    "price": 10.25,
+    "inStock": 10,
+    "maxCartQuantity": 5,
+    "imgBase64": ""
+  },
+  {
+    "id": 4,
+    "name": "Febre DU rato",
+    "price": 10.25,
+    "inStock": 10,
+    "maxCartQuantity": 5,
+    "imgBase64": ""
+  }
+]
+>>>>>>> 191b5732e33f9b71629023a6ec7bf9fdb05d5602

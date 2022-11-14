@@ -1,17 +1,18 @@
-import './App.scss';
-import Header from './components/Header/Header';
-import ProductCard from './components/ProductCard/ProductCard';
+import "./App.scss";
+import Header from "./components/Header/Header";
+import ProductList from "./components/ProductList/ProductList";
+import React from "react";
+import { QntdItemsCart } from "./contexts/GlobalContext";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-
-      <div className="products-list" style={{padding: '50px 30px'}}>
-        <ProductCard />
-      </div>
-    </div>
-  );
+	return (
+		<div className="App">
+			<QntdItemsCart>
+				<Header />
+        <ProductList />
+			</QntdItemsCart>
+		</div>
+	);
 }
 
 export default App;

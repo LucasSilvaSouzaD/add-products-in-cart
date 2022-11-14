@@ -1,7 +1,7 @@
-@import '../../sass/base';
+@import "../../sass/base";
 
 .card-container {
-  max-width: 225px;
+  max-width: 270px;
   width: 100%;
   background-color: #fff;
   border-radius: 7px;
@@ -35,15 +35,11 @@
     line-height: 12px;
     margin-bottom: 10px;
   }
-  
+
   .text-container .product-price span {
     color: #5bc666;
     font-weight: 700;
   }
-
-  
-
-  
 }
 
 .card-container .quantity-container {
@@ -51,7 +47,7 @@
   @include flexboxContainer;
 
   input {
-    border: 2px solid #3E6D9C;
+    border: 2px solid #3e6d9c;
     width: 95px;
     height: 40px;
     border-radius: 5px;
@@ -59,11 +55,10 @@
   }
 }
 
-
 .card-container .button-container button {
   width: 100%;
   border: none;
-  background-color: #21A64F;
+  background-color: #21a64f;
   color: #fff;
   padding: 12px 0;
   border-radius: 5px;
