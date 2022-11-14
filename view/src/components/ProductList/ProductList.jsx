@@ -5,7 +5,7 @@ import './ProductList.scss'
 
 const ProductList = () => {
   const [dados, setDados] = useState('')
-  const {setCartProducts, data} = useContext(GlobalContext)
+  const { setCartProducts, data } = useContext(GlobalContext)
 
   function handleFormatProducts(productsResponse) {
     setDados(productsResponse)
@@ -20,9 +20,9 @@ const ProductList = () => {
   useEffect(() => {
     try {
       fetch('http://localhost:3030/products')
-      .then((response) => response.json())
-      .then((data) => handleFormatProducts(data))
-    } catch(e) {
+        .then((response) => response.json())
+        .then((data) => handleFormatProducts(data))
+    } catch (e) {
       console.error('request error', e)
     }
   }, [])

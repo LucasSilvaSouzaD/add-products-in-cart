@@ -6,6 +6,7 @@ export const GlobalContext = createContext();
 export const QntdItemsCart = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
 	const [qntdItems, setQntdItems] = useState(0);
+  const [cartproducts, setCartproducts] = useState([])
 
 	function addItem(name, number) {
 		setQntdItems(qntdItems + number);

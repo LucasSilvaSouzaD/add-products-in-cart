@@ -76,9 +76,9 @@ const Cart = () => {
                   <img src={ProductImg} alt="" />
                 </div>
                 <div className="text-container">
-                  <div className="delete-icon-container" onClick={handleDeleteCurrentProduct}>
+                  {/* <div className="delete-icon-container" onClick={handleDeleteCurrentProduct}>
                     <img src={deleteProductIcon} alt="Ícone para excluir o produto" />
-                  </div>
+                  </div> */}
                   <span className="product-name">{product.name}</span>
                   <span className="product-ref">ref: {product.id}</span>
                   <span className="product-quantity">

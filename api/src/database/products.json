@@ -1,27 +1,24 @@
-<<<<<<< HEAD
-[{"id":5000,"name":"Piada Merda","price":10.25,"inStock":10,"maxCartQuantity":5,"imgBase64":""},{"id":53412,"name":"A Volta dos que não foram","inStock":10,"price":10.25,"maxCartQuantity":5,"imgBase64":""},{"id":31532,"name":"Febre DU rato","price":10.25,"inStock":10,"maxCartQuantity":5,"imgBase64":""},{}]
-=======
 [
   {
     "id": 5000,
-    "name": "Piada Merda",
-    "price": 10.25,
+    "name": "God of War - Ragnarok",
+    "price": 350.99,
     "inStock": 10,
     "maxCartQuantity": 5,
-    "imgBase64": ""
+    "imgBase64": "https://sm.ign.com/t/ign_br/game/g/god-of-war/god-of-war-ragnarok_z48t.128.jpg"
   },
   {
     "id": 53412,
-    "name": "A Volta dos que não foram",
+    "name": "Carrinho de Rolimã",
     "inStock": 10,
-    "price": 10.25,
+    "price": 10,
     "maxCartQuantity": 5,
-    "imgBase64": ""
+    "imgBase64": "https://i.pinimg.com/564x/74/22/31/742231e8cc4ec58a874e005cabadb8d4.jpg"
   },
   {
     "id": 31532,
-    "name": "Febre DU rato",
-    "price": 10.25,
+    "name": "Harry Potter - Pedra Filosofal",
+    "price": 29.99,
     "inStock": 10,
     "maxCartQuantity": 5,
     "imgBase64": ""
@@ -43,4 +40,3 @@
     "imgBase64": ""
   }
 ]
->>>>>>> 191b5732e33f9b71629023a6ec7bf9fdb05d5602
