@@ -1,16 +1,35 @@
 const { writeFile, readFile } = require("fs/promises");
-const productsDB = require('./../database/products.json')
-const cartDB = require('./../database/sales.json')
-
 
 const save = async (data, database) => {
-  const filepath = databaseFile.replace("/C:", "");
+  const URL = './src/database/' + database + '.json'
 
-  const currentData = JSON.parse(await readFile(filepath));
+  const currentData = JSON.parse(await readFile(URL));
   currentData.push(data);
 
-  await writeFile(filepath, JSON.stringify(currentData));
-  return currentData;
+  await writeFile(URL, JSON.stringify(currentData));
+  return data;
 }
 
-module.exports = save
+const update = async (data, database) => {
+  const URL = './src/database/' + database + '.json'
+
+  const currentData = JSON.parse(await readFile(URL));
+
+  const product = currentData.find(product => product.id == data.id)
+  const productsFilter = currentData.filter(product => product.id !== data.id)
+  product.quantityReserved = Number(product.quantityReserved) + Number(data.quantityReserved)
+
+  const hasStock =  data.inStock >= product.quantityReserved 
+
+  if (!hasStock) throw 'Não temos estoque para essa quantidade'
+
+  productsFilter.push(product);
+
+  await writeFile(URL, JSON.stringify(productsFilter));
+  return product;
+}
+
+module.exports = {
+  save,
+  update
+}

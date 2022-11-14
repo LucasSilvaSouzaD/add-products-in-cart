@@ -1,6 +1,8 @@
 const bodyParser = require('body-parser')
- 
+
+const cart = require('./cartRoute')
 const product = require('./productRoute')
+
 const cors = require('cors')
 
 module.exports = app => {
@@ -11,6 +13,6 @@ module.exports = app => {
     origin: '*',
    }),
    product,
-
+   cart
    )
  }

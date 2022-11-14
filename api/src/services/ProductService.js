@@ -13,7 +13,6 @@ class ProductService {
     
     static verifyStock(id, quantity) {
         const product = productsBase.find(product => product.id == id)
-
         const hasStock = product.inStock >= quantity
 
         const response = {
