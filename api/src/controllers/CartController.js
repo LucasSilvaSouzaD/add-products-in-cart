@@ -5,10 +5,6 @@ class CartController {
   static async addCart(req, res) {
     const { id, quantity } = req.body;
 
-    console.log('addCart', {
-      id, quantity, req
-    })
-
     try {
       const response = await addProductInCart(id, quantity);
 
