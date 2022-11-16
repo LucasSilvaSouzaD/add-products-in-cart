@@ -69,7 +69,7 @@
   }
 
   &:disabled{
-    cursor: none;
+    cursor: default;
     background-color: #696969;
   }
 }
