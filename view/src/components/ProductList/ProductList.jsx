@@ -9,12 +9,6 @@ const ProductList = () => {
 
   function handleFormatProducts(productsResponse) {
     setDados(productsResponse)
-    // const mainObj = {}
-
-    // productsResponse.forEach(product => {
-    //   mainObj[product.name] = {name: product.name, quantity: 0, isActive: false, id: product.id}
-    // });
-    // setCartProducts(mainObj)
   }
 
   useEffect(() => {
