@@ -12,26 +12,16 @@ class ProductService {
     }
     
     static verifyStock(id, quantity) {
-
-      /*
-      não consegui verificar o tipo number
-      if(typeof quantity !== Number) {
-        const response = "Informe uma valor numérico";
-        return response
+      if(typeof quantity !== 'number') {
+        throw "Informe uma valor numérico";
       }
-      */
-
-      console.log('passou do if', quantity)
 
         const product = productsBase.find(product => product.id == id)
 
-      /*
-      o if do estoque no CartService não deixa retornar a string correta
+
       if(!product) {
-        const response = "Id de produto incorreto, verifique por favor.";
-        return response
+        throw "Id de produto incorreto, verifique por favor.";
       }
-      */
 
         const hasStock = product.inStock >= quantity
 
