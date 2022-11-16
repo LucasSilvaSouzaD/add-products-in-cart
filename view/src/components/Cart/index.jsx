@@ -10,46 +10,18 @@ const Cart = () => {
   const data = useContext(GlobalContext)
   const [openCartModal, setOpenCartModal] = useState(false)
 
-  useEffect(() => {
-    const productsState = data.cartProducts
-
-    console.log('activedProducts')
-  }, [data.cartProducts])
-
-  const testeProdutosCart = [
-    {
-      id: 5000,
-      name: 'Piada Merda',
-      price: 10.25,
-      inStock: 10,
-      maxCartQuantity: 5,
-      imgBase64: '',
-      quantity: 1,
-    },
-    {
-      id: 53412,
-      name: 'A Volta dos que não foram',
-      inStock: 10,
-      price: 10.25,
-      maxCartQuantity: 5,
-      imgBase64: '',
-      quantity: 1,
-    },
-  ]
-
   function handleOpenCartModal() {
-    console.log('clicou')
     setOpenCartModal(true)
   }
 
   function handleCloseCartModal() {
-    console.log('clicou')
     setOpenCartModal(false)
   }
 
-  function handleDeleteCurrentProduct() {
-    console.log('vai excluir producto')
-  }
+  //TODO
+  // function handleDeleteCurrentProduct() {
+  //   console.log('vai excluir producto')
+  // }
 
   return (
     <div className="cart-container">
@@ -68,21 +40,21 @@ const Cart = () => {
             <img src={IconClose} alt="Ícone para fechar o modal" />
           </div>
         </div>
-        {testeProdutosCart.length ? (
+        {data.cartProducts.length ? (
           <div className="products-cart-list">
-            {testeProdutosCart.map((product) => (
-              <div className="item-container" key={product.id}>
+            {data.cartProducts.map((product) => (
+              <div className="item-container" key={product.name}>
                 <div className="img-container">
-                  <img src={ProductImg} alt="" />
+                  <img src={product.img} alt="" />
                 </div>
                 <div className="text-container">
                   {/* <div className="delete-icon-container" onClick={handleDeleteCurrentProduct}>
                     <img src={deleteProductIcon} alt="Ícone para excluir o produto" />
                   </div> */}
                   <span className="product-name">{product.name}</span>
-                  <span className="product-ref">ref: {product.id}</span>
+                  <span className="product-ref">ref: {product.name}</span>
                   <span className="product-quantity">
-                    {product.quantity}X {product.price}
+                    {product.qtd}X {product.price}
                   </span>
                 </div>
               </div>
@@ -90,7 +62,7 @@ const Cart = () => {
 
             <div className="total-cart-container">
               <span className="text">Total</span>
-              <span className="total-price">{testeProdutosCart.reduce((acc, product) => (acc += product.price), 0)}</span>
+              <span className="total-price">R$ {data.cartProducts.reduce((acc, product) => (acc += product.price * product.qtd), 0).toFixed(2)}</span>
             </div>
           </div>
         ) : (
