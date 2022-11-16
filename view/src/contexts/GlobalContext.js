@@ -6,33 +6,42 @@ export const GlobalContext = createContext();
 export const QntdItemsCart = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
 	const [qntdItems, setQntdItems] = useState(0);
+	const [productsIds, setProductsIds] = useState([]);
 
-	function addItem(name, price, imgBase64, number) {
+	function addItem(id, name, price, imgBase64, number) {
 		setQntdItems(qntdItems + number);
     var obj = {}
-    
-    if(cartProducts.length){
-      cartProducts.forEach((item) => {
-        if(item.name === name){
-          item.qtd += number
-        }else{
-          obj = {
-            name: name,
-            price: price,
-            img: imgBase64,
-            qtd: number
+
+    if(cartProducts.length > 0){
+      if(!productsIds.includes(id)){
+        cartProducts.forEach((item) => {
+          if(item.id !== id){
+            obj = {
+              id: id,
+              name: name,
+              price: price,
+              img: imgBase64,
+              qtd: number
+            }
+
+            setCartProducts([...cartProducts, obj])
+            setProductsIds([...productsIds, id])
           }
-          setCartProducts([...cartProducts, obj])
-        }
-      })
+        })
+      }else{
+        cartProducts[productsIds.indexOf(id)].qtd += number;
+      }
     }else{
       obj = {
+        id: id,
         name: name,
         price: price,
         img: imgBase64,
         qtd: number
       }
+
       setCartProducts([...cartProducts, obj])
+      setProductsIds([...productsIds, id])
     }
 	}
 

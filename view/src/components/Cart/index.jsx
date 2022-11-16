@@ -43,7 +43,7 @@ const Cart = () => {
         {data.cartProducts.length ? (
           <div className="products-cart-list">
             {data.cartProducts.map((product) => (
-              <div className="item-container" key={product.name}>
+              <div className="item-container" key={product.id}>
                 <div className="img-container">
                   <img src={product.img} alt="" />
                 </div>
@@ -52,7 +52,7 @@ const Cart = () => {
                     <img src={deleteProductIcon} alt="Ícone para excluir o produto" />
                   </div> */}
                   <span className="product-name">{product.name}</span>
-                  <span className="product-ref">ref: {product.name}</span>
+                  <span className="product-ref">ref: {product.id}</span>
                   <span className="product-quantity">
                     {product.qtd}X {product.price}
                   </span>

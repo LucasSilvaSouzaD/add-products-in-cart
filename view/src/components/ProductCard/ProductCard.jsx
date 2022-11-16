@@ -5,17 +5,22 @@ import { useState, useContext } from 'react'
 
 const ProductCard = ({ id, name, price, imgBase64 }) => {
   const [qntdProduct, setQntdProduct] = useState(0)
-  const [cartError, setCartError] = useState(false)
+  const [stockError, setStockError] = useState(false)
 
   const data = useContext(GlobalContext)
+
+  function haveStock(){
+    console.log("Produto sem estoque");
+      // setStockError(true)
+  }
 
   function convertPrice(price) {
     var value = price ? price.toString() : 0.00
     return value ? 'R$ ' + value.replace('.', ',') : 0
   }
 
-  function addProductGlobal(name, price, imgBase64){
-    data.addItem(name, price, imgBase64, qntdProduct)
+  function addProductGlobal(id, name, price, imgBase64){
+    data.addItem(id, name, price, imgBase64, qntdProduct)
     setQntdProduct(0)
   }
 
@@ -35,7 +40,7 @@ const ProductCard = ({ id, name, price, imgBase64 }) => {
         body: JSON.stringify(payload),
       })
         .then((response) => response.json())
-        .then((json) => json.code === 403 ? console.log("ERRO AO ADD") : addProductGlobal(name, price, imgBase64));
+        .then((json) => json.code === 403 ? haveStock() : addProductGlobal(id, name, price, imgBase64));
 
     } catch (e) {
       console.error('request error', e)
@@ -43,7 +48,7 @@ const ProductCard = ({ id, name, price, imgBase64 }) => {
   }
 
   return (
-    <div className="card-container">
+    <div className="card-container" key={id}>
       <div className="image-container">
         <img src={imgBase64} alt="" />
       </div>
