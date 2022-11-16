@@ -4,19 +4,22 @@ import { GlobalContext } from '../../contexts/GlobalContext'
 import { useState, useContext } from 'react'
 
 const ProductCard = ({ id, name, price, imgBase64 }) => {
-  // console.log('props', { id, name, price, imgBase64 })
   const [qntdProduct, setQntdProduct] = useState(0)
+  const [cartError, setCartError] = useState(false)
+
   const data = useContext(GlobalContext)
 
   function convertPrice(price) {
-    console.log('price', price)
     var value = price ? price.toString() : 0.00
     return value ? 'R$ ' + value.replace('.', ',') : 0
   }
 
-  function handleAddToCart(id, quantity) {
-    // data.addItem(name, qntdProduct)
-    // setQntdProduct(0)
+  function addProductGlobal(name, price, imgBase64){
+    data.addItem(name, price, imgBase64, qntdProduct)
+    setQntdProduct(0)
+  }
+
+  function handleAddToCart(id, quantity, name, price) {
     const payload = {
       id,
       quantity,
@@ -32,12 +35,8 @@ const ProductCard = ({ id, name, price, imgBase64 }) => {
         body: JSON.stringify(payload),
       })
         .then((response) => response.json())
-        // .then((data) => setCartproducts(prevState => {
-        //   return [
-        //     ...prevState,
-        //     data
-        //   ]
-        // }))
+        .then((json) => json.code === 403 ? console.log("ERRO AO ADD") : addProductGlobal(name, price, imgBase64));
+
     } catch (e) {
       console.error('request error', e)
     }
@@ -67,7 +66,7 @@ const ProductCard = ({ id, name, price, imgBase64 }) => {
         />
       </div>
       <div className="button-container">
-        <button onClick={() => handleAddToCart(id, qntdProduct)}>Comprar</button>
+        <button onClick={() => handleAddToCart(id, qntdProduct, name, Number(price), imgBase64)}>Comprar</button>
       </div>
     </div>
   )
