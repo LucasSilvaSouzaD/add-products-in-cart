@@ -1,4 +1,7 @@
 const { addProductInCart } = require("../src/services/CartService");
+const { findOne } = require("../src/services/ProductService");
+const { verifyStock } = require("../src/services/ProductService");
+
 
 // Values for running the tests
 const successProductId = 5000;
@@ -25,18 +28,29 @@ describe("addProductInCart Function", () => {
   });
 
   test('Cannot add product', async () => {
-    const response = await addProductInCart(errorProductId, errorProductQty);
-    expect(response).toEqual("Não tem estoque para essa quantidade");
+    try {
+      await addProductInCart(errorProductId, errorProductQty);
+    } catch(e) {
+      expect(e).toEqual("Não tem estoque para essa quantidade");
+    }
   });
 
-  /*
-  o if do estoque no CartService não deixa retornar a string correta
   test('Check if you add product with incorrect id', async () => {
-    const response = await addProductInCart(wrongProductId, wrongProductQty);
-    console.log('response', response)
-    expect(response.name).toEqual("God of War - Ragnarok");
+    try {
+      await addProductInCart(wrongProductId, wrongProductQty);
+    } catch(e) {
+      expect(e).toEqual('Id de produto incorreto, verifique por favor.')
+    }
   });
-  */
+
+  test('Incorrect quantity value', async () => {
+    try {
+      await addProductInCart(errorProductId, wrongQuantityInput);
+    } catch(e) {
+      console.log('error ==>', e)
+      expect(e).toEqual("Informe uma valor numérico");
+    }
+  });
 
   /*
   quantidade desejada continua como 1, deveria ter somado?
@@ -45,14 +59,33 @@ describe("addProductInCart Function", () => {
     expect(response.quantityReserved).toEqual(1);
   });
   */
+})
 
-  /*
-  não consegui verificar o tipo number
-  test('Incorrect quantity value', async () => {
-    const response = await addProductInCart(errorProductId, wrongQuantityInput);
-    console.log('response ==>', response)
-    expect(response).toEqual("Informe uma valor numérico");
+describe('Stock Validation', () => {
+  test('Check valide stock', () => {
+    const response = verifyStock(successProductId, successProductQty);
+    expect(response.hasStock).toEqual(true)
+  })
+
+  test('Check overstock', () => {
+    const response = verifyStock(errorProductId, errorProductQty);
+    expect(response.hasStock).toEqual(false)
+  })
+})
+
+describe("Get products", () => {
+  test('Get product successfully', async () => {
+    const response = await findOne(successProductId);
+    expect(response).toBeDefined();
   });
-  */
+
+  test('Check Invalid Product', async () => {
+    try {
+      await findOne(wrongProductId);
+    } catch(e) {
+      expect(e).toEqual('Id de produto incorreto, verifique por favor.')
+    }
+  });
+  
 })
 

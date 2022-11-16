@@ -23,7 +23,6 @@ const Cart = () => {
       price: 10.25,
       inStock: 10,
       maxCartQuantity: 5,
-      imgBase64: '',
       quantity: 1,
     },
     {
