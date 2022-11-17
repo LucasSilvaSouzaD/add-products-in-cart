@@ -25,18 +25,18 @@
   },
   {
     "id": 3,
-    "name": "Febre DU rato",
+    "name": "Pacote de biscoito",
     "price": 10.25,
     "inStock": 10,
     "maxCartQuantity": 5,
-    "imgBase64": ""
+    "imgBase64": "https://i.pinimg.com/564x/75/4d/fe/754dfea883fa237e6ad3519fd8923297.jpg"
   },
   {
     "id": 4,
-    "name": "Febre DU rato",
+    "name": "Estojo",
     "price": 10.25,
     "inStock": 10,
     "maxCartQuantity": 5,
-    "imgBase64": ""
+    "imgBase64": "https://i.pinimg.com/564x/aa/9d/08/aa9d0890c98b0b56a855499695657c69.jpg"
   }
 ]
