@@ -10,9 +10,8 @@ class CartService {
 
   static async addProductInCart(id, quantity) {
     const { hasStock } = verifyStock(id, quantity);
-    console.log('chegou addProductInCart', hasStock)
-
-    if (!hasStock) return "Não tem estoque para essa quantidade";
+    
+    if (!hasStock) throw "We do not have stock for this quantity";
 
     const hasProductInCart = cartBase.find((item) => item.id == id);
 
