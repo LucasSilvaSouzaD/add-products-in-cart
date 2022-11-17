@@ -67,4 +67,9 @@
   &:hover {
     background-color: #177939;
   }
+
+  &:disabled{
+    cursor: default;
+    background-color: #696969;
+  }
 }
