@@ -10,7 +10,7 @@ describe("Products Services", () => {
     const expected = {
       id: 53412,
       name: "Carrinho de Rolimã",
-      inStock: 10,
+      inStock: 300,
       price: 10,
       maxCartQuantity: 5,
       imgBase64:

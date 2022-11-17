@@ -6,7 +6,7 @@ const successProductId = 5000;
 const successProductQty = 1;
 
 const errorProductId = 53412;
-const errorProductQty = 11;
+const errorProductQty = 350;
 
 const wrongQuantityInput = 'abc'
 
