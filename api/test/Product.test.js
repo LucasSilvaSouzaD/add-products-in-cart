@@ -1,8 +1,10 @@
 const { findOne, verifyStock } = require("../src/services/ProductService");
 
+const successProductId = 53412;
+
 describe("Products Services", () => {
   test("search for specific product", async () => {
-    const product = findOne(53412);
+    const product = findOne(successProductId);
 
     const expected = {
       id: 53412,
@@ -19,15 +21,5 @@ describe("Products Services", () => {
 
   test("product does not exist", async () => {
     expect(() => findOne(12311212)).toThrow();
-  });
-
-  test("in-stock product", async () => {
-    const response = verifyStock(31532, 2);
-    const expected = {
-      id: 31532,
-      hasStock: true
-    };
-
-    expect(response).toEqual(expected);
   });
 });
