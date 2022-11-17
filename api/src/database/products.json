@@ -3,14 +3,14 @@
     "id": 5000,
     "name": "God of War - Ragnarok",
     "price": 350.99,
-    "inStock": 10,
+    "inStock": 120,
     "maxCartQuantity": 5,
     "imgBase64": "https://viciados.net/wp-content/uploads/2022/09/god-of-war-ragnarok-trailer-dublado-pt-br.webp"
   },
   {
     "id": 53412,
     "name": "Carrinho de Rolimã",
-    "inStock": 10,
+    "inStock": 300,
     "price": 10,
     "maxCartQuantity": 5,
     "imgBase64": "https://i.pinimg.com/564x/74/22/31/742231e8cc4ec58a874e005cabadb8d4.jpg"
@@ -19,7 +19,7 @@
     "id": 31532,
     "name": "Harry Potter - Pedra Filosofal",
     "price": 29.99,
-    "inStock": 10,
+    "inStock": 120,
     "maxCartQuantity": 5,
     "imgBase64": "https://m.media-amazon.com/images/I/71TsrP9RszL.jpg"
   },
@@ -27,7 +27,7 @@
     "id": 3,
     "name": "Pacote de biscoito",
     "price": 10.25,
-    "inStock": 10,
+    "inStock": 125,
     "maxCartQuantity": 5,
     "imgBase64": "https://i.pinimg.com/564x/75/4d/fe/754dfea883fa237e6ad3519fd8923297.jpg"
   },
@@ -35,7 +35,7 @@
     "id": 4,
     "name": "Estojo",
     "price": 10.25,
-    "inStock": 10,
+    "inStock": 912,
     "maxCartQuantity": 5,
     "imgBase64": "https://i.pinimg.com/564x/aa/9d/08/aa9d0890c98b0b56a855499695657c69.jpg"
   },
@@ -43,7 +43,7 @@
     "id": 7,
     "name": "Dommenget - Matthias Jabs Explorer",
     "price": 1500.00,
-    "inStock": 10,
+    "inStock": 510,
     "maxCartQuantity": 5,
     "imgBase64": "https://www.dhresource.com/0x0/f2/albu/g9/M01/79/D7/rBVaWF7XWS-ALN_xAAJAQZQsHBU641.jpg"
   },
@@ -51,7 +51,7 @@
     "id": 13,
     "name": "Scorpions - Taken by Force",
     "price": 99.99,
-    "inStock": 10,
+    "inStock": 610,
     "maxCartQuantity": 5,
     "imgBase64": "https://m.media-amazon.com/images/I/41tFg9bAxVL._SY350_.jpg"
   }
