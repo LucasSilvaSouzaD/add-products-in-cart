@@ -22,7 +22,6 @@ describe("addProductInCart Function", () => {
 
   test('Informed product is really what saved', async () => {
     const response = await addProductInCart(successProductId, successProductQty);
-    console.log("response", response)
     expect(response.name).toEqual("God of War - Ragnarok");
   });
 
@@ -38,7 +37,6 @@ describe("addProductInCart Function", () => {
     try {
       await addProductInCart(errorProductId, wrongQuantityInput);
     } catch(e) {
-      console.log('error ==>', e)
       expect(e).toEqual("We do not have stock for this quantity");
     }
   });
